@@ -10,11 +10,11 @@ const AddService = () => {
     return (
         <div>
             <h2>Add your service here</h2>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <input {...register("firstName", { required: true, maxLength: 20 })} />
-                <input {...register("lastName", { pattern: /^[A-Za-z]+$/i })} />
-                <input type="number" {...register("age", { min: 18, max: 99 })} />
-                <input type="submit" />
+            <form className='d-flex flex-column w-50 mx-auto' onSubmit={handleSubmit(onSubmit)}>
+                <input className='mb-3' placeholder='Your Name' {...register("name", { required: true, maxLength: 20 })} />
+                <input className='mb-3' placeholder='Description' {...register("description", )} />
+                <input className='mb-3' placeholder='Price' type="number" {...register("price")} />
+                <input className='mb-3' type="submit" />
             </form>
         </div >
     );
