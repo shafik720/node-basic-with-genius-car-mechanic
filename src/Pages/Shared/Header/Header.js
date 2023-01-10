@@ -35,6 +35,14 @@ const Header = () => {
                             </NavDropdown>
                         </Nav>
                         <Nav>
+                            {
+                                user ? 
+                                <Nav.Link as={Link} to="addservice">Add Product</Nav.Link>  : <></>
+                            }
+                            {
+                                user ? 
+                                <Nav.Link as={Link} to="manage">Manage Product</Nav.Link>  : <></>
+                            }
                             <Nav.Link as={Link} to="about">About</Nav.Link>
                             {
                                 user ?
