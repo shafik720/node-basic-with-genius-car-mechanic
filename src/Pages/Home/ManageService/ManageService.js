@@ -11,9 +11,12 @@ const ManageService = () => {
                 method: 'DELETE'
             })
                 .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                    alert('Successfully deleted !');
+                .then(data => {                    
+                    if(data.deletedCount>0){
+                        alert('Successfully deleted !');
+                        const remainingItems = services.filter(index=>index._id != id);
+                        setServices(remainingItems);
+                    }
                 })
         }
     }
