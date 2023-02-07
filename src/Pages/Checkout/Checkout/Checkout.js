@@ -1,6 +1,8 @@
+import axios from 'axios';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
 import useSingleService from '../../Hooks/useSingleService';
 import './Checkout.css';
@@ -17,8 +19,14 @@ const Checkout = () => {
             serviceName : e.target.service.value,
             address: e.target.address.value
         }
-        
-        console.log(user);
+
+       axios.post('http://localhost:5000/addOrder', user)
+       .then(response=>{
+        if(response.data.insertedId){
+            toast('Order Added !');
+            console.log('added')
+        }
+       })
     }
     return (
         <div>
