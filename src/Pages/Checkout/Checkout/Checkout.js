@@ -33,8 +33,8 @@ const Checkout = () => {
             <h2>Please Checkout your booking : {service.name} </h2>
             <div className="order-form">
                 <form action="" onSubmit={handleSubmit}>
-                    <input readOnly value={user.displayName} type="text" name="name" id="" />
-                    <input readOnly value={user.email}  type="email" name="email" id="" />
+                    <input readOnly value={user?.displayName} type="text" name="name" id="" />
+                    <input readOnly value={user?.email}  type="email" name="email" id="" />
                     <input readOnly value={service.name} type="text" name="service" id="" />
                     <input type="text" name="address" placeholder='Your address' id="" />
                     <button type="submit">Submit</button>

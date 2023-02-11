@@ -8,9 +8,11 @@ import auth from '../../firebase.init';
 const Orders = () => {
     const[orders, setOrders] = useState([]);
     const[user] = useAuthState(auth);
+    // console.log(user);
     useEffect(()=>{
         const getOrder = async() =>{
-            const email = user.email;
+            const email = user?.email;
+            console.log(email);
             const url = `http://localhost:5000/orderData?email=${email}`;
             const {data} = await axios.get(url, {
                 headers : {

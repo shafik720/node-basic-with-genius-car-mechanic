@@ -30,8 +30,9 @@ function App() {
         <Route path="/orders" element={<Orders></Orders>}></Route>
         <Route path="/register" element={<Register></Register>}></Route>
         <Route path="/checkout/:id" element={
-          
-          <Checkout></Checkout>
+          <RequireAuth>
+            <Checkout></Checkout>
+          </RequireAuth>
         }></Route>
         <Route path="/addservice" element={
           <RequireAuth>
