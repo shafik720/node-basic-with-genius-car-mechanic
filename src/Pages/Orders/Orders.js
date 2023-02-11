@@ -12,7 +12,7 @@ const Orders = () => {
     useEffect(()=>{
         const getOrder = async() =>{
             const email = user?.email;
-            console.log(email);
+            // console.log(email);
             const url = `http://localhost:5000/orderData?email=${email}`;
             const {data} = await axios.get(url, {
                 headers : {
